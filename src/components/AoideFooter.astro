@@ -1,0 +1,28 @@
+---
+---
+
+<!-- JAVASCRIPT
+    ================================================== -->
+<script src="/js/jquery.min.js" is:inline></script>
+<script src="/js/popper.min.js" is:inline></script>
+<script src="/js/bootstrap.min.js" is:inline></script>
+<script src="/js/plugins.js" is:inline></script>
+
+<script src="/js/contact.js" is:inline></script>
+<script src="/js/custom.js" is:inline></script>
+<script type="text/javascript">
+  (function (win, doc) {
+    win.addEventListener("load", function () {
+      const bodyJS = doc.querySelector(".js > body");
+      if (bodyJS) {
+        bodyJS.classList.add("render");
+      }
+      const innerContent = doc.querySelector(".content__inner");
+      if (innerContent) {
+        innerContent.style.opacity = 1;
+      }
+    });
+  })(window, document);
+</script>
+<!-- End Document
+================================================== -->
