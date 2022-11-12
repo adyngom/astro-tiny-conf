@@ -1,5 +1,8 @@
 ---
 import Aoide from "../layouts/Aoide.astro";
+import SpeakerCol from "../components/partials/SpeakerCol.astro";
+
+const speakers = await Astro.glob("./speakers/*.{md,mdx}");
 ---
 
 <Aoide title="Speakers | Angular Tiny Conference 2022">
@@ -12,7 +15,7 @@ import Aoide from "../layouts/Aoide.astro";
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="content__title">summit speakers</h2>
+                  <h2 class="content__title">2022 speakers</h2>
                 </div>
                 <div class="col-lg-4 mt-3">
                   <h3 class="content__subtitle">
@@ -29,16 +32,16 @@ import Aoide from "../layouts/Aoide.astro";
                   <h4>moderators</h4>
                   <div class="title-page-line mt-4 mb-5"></div>
                 </div>
-                <div class="col-md-3">
-                  <div class="speaker-image">
-                    <!--   -->
-                    <img
-                      src="/assets/img/speakers/1-joshua-morony.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="col-md-9 mt-4 mt-md-0">
+                <!-- SPEAKER COLUMNS -->
+                {
+                  speakers.map((speaker) => {
+                    console.log(speaker);
+                    return <SpeakerCol {...speaker.frontmatter} />;
+                  })
+                }
+                <!-- END SPEAKER COLUMNS -->
+
+                <!-- <div class="col-md-9 mt-4 mt-md-0">
                   <h5>Josh Morony</h5>
                   <p><em>GDE for @angular | Ionic Developer Expert</em></p>
                   <p class="mt-4">
@@ -54,17 +57,9 @@ import Aoide from "../layouts/Aoide.astro";
                     <a href="#">be</a>
                     <a href="#">in</a>
                   </div>
-                </div>
-                <div class="col-md-3 mt-5">
-                  <div class="speaker-image">
-                    <!-- <h6>Jordan Powell</h6> -->
-                    <img
-                      src="/assets/img/speakers/2-jordan-powell.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="col-md-9 mt-4 mt-md-5">
+                </div> -->
+
+                <!-- <div class="col-md-9 mt-4 mt-md-5">
                   <h5>Jordan Powell</h5>
                   <p>
                     <em
@@ -83,7 +78,7 @@ import Aoide from "../layouts/Aoide.astro";
                     <a href="#">tw</a>
                     <a href="#">fb</a>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
