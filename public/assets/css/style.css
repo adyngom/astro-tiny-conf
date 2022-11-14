@@ -99,7 +99,7 @@ h6, .h6 {
 	background-color: rgba(0,0,0,0.7);
 }
 ::-moz-selection {
-	background-color: #rgba(0,0,0,0.7);
+	background-color: rgba(0,0,0,0.7);
 }
 
 ::selection {
@@ -301,9 +301,14 @@ p {
 .logo {
 	position: absolute;
 	top: 22px;
-	left: 80px;
+	left: 5rem;
 	display: block;
-	z-index: 3002;
+	z-index: 2002;
+}
+.page-logo {
+	position: relative;
+	right: 0;
+	left: 0;
 }
 .logo img {
 	display: block;
@@ -312,6 +317,10 @@ p {
 	width: auto;
 	border-radius: 100%;
 	border: 4px solid #fff;
+}
+
+.page-logo img {
+	margin: 0 auto 2rem;
 }
 a.ticket-link .pulse{
     -webkit-transition: all 300ms linear;
@@ -620,6 +629,9 @@ main {
 	margin: 0 auto;
 	color: var(--color-subtitle);
 }
+.page__subtitle {
+	font-size: 0.6em;
+}
 .content__close {
 	position: absolute;
 	top: 70px;
@@ -695,7 +707,7 @@ main {
 	left: 0;
 	width: 100%;
 	height: 100vh;
-	//pointer-events: none;
+	/* pointer-events: none; */
 	z-index: 3;
 }
 

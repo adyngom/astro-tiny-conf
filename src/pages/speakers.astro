@@ -1,8 +1,14 @@
 ---
 import Aoide from "../layouts/Aoide.astro";
+import PageTitleSection from "../components/partials/PageTitleSection.astro";
 import SpeakerCol from "../components/partials/SpeakerCol.astro";
-
-const speakers = await Astro.glob("./speakers/*.{md,mdx}");
+import type { SessionSpeaker } from "../interfaces";
+//const speakers = await Astro.glob("./speakers/*.{md,mdx}");
+const query = await fetch(
+  "https://sessionize.com/api/v2/n92go629/view/SpeakerWall"
+);
+const data = await query.json();
+const speakers = data;
 ---
 
 <Aoide title="Speakers | Angular Tiny Conference 2022">
@@ -11,32 +17,21 @@ const speakers = await Astro.glob("./speakers/*.{md,mdx}");
       <div class="section">
         <div class="section">
           <!-- Page start -->
-          <div class="section padding-top-big">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h2 class="content__title">2022 speakers</h2>
-                </div>
-                <div class="col-lg-4 mt-3">
-                  <h3 class="content__subtitle">
-                    The rapid handle injects into the bashful lift.
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
+          <PageTitleSection
+            pageTitle="Speakers"
+            pageSubtitle="home | speakers"
+          />
           <div class="section padding-top-bottom">
             <div class="container">
               <div class="row">
-                <div class="offset-md-3 col-md-9">
+                <!-- <div class="offset-md-3 col-md-9">
                   <h4>moderators</h4>
                   <div class="title-page-line mt-4 mb-5"></div>
-                </div>
+                </div> -->
                 <!-- SPEAKER COLUMNS -->
                 {
-                  speakers.map((speaker) => {
-                    console.log(speaker);
-                    return <SpeakerCol {...speaker.frontmatter} />;
+                  speakers.map((speaker: SessionSpeaker) => {
+                    return <SpeakerCol client:load {...speaker} />;
                   })
                 }
                 <!-- END SPEAKER COLUMNS -->
@@ -82,7 +77,7 @@ const speakers = await Astro.glob("./speakers/*.{md,mdx}");
               </div>
             </div>
           </div>
-          <div class="section padding-bottom-big">
+          <!-- <div class="section padding-bottom-big">
             <div class="container">
               <div class="row">
                 <div class="offset-md-3 col-md-9">
@@ -157,7 +152,7 @@ const speakers = await Astro.glob("./speakers/*.{md,mdx}");
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div
             class="section padding-top padding-bottom-big background-dark footer"
           >
@@ -165,9 +160,8 @@ const speakers = await Astro.glob("./speakers/*.{md,mdx}");
               <div class="row">
                 <div class="col-md-12">
                   <img src="/assets/img/tinyco.png" alt="" />
-                  <h6 class="mt-5 mb-3">Get in touch:</h6>
-                  <p>office@aoide.com</p>
-                  <p>+1 325 2532</p>
+                  <h6 class="mt-5 mb-3">Keep in touch:</h6>
+                  <p>tw: @angulartinyconf | yt: angulartinyconf</p>
                 </div>
                 <div class="col-md-12 mt-5 mb-5">
                   <div class="title-page-line"></div>

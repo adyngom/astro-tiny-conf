@@ -1,0 +1,27 @@
+---
+export interface Props {
+  pageTitle: string;
+  pageSubtitle: string;
+}
+const { pageTitle, pageSubtitle, ...props } = Astro.props;
+---
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <a href="index.html">
+          <div class="logo page-logo text-center">
+            <img src="assets/img/tinyco-red-round-big.png" alt="" />
+          </div>
+        </a>
+        <h2 class="content__title text-center">{pageTitle}</h2>
+      </div>
+      <div class="col-lg-4 mt-3">
+        <h6 class="content__subtitle page__subtitle text-center small">
+          {pageSubtitle}
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>

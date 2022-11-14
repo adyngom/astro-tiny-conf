@@ -3,25 +3,26 @@ import Aoide from "../layouts/Aoide.astro";
 const title = "Angular Tiny Conf 2022";
 ---
 
-<Aoide title="Angular Tiny Conf 2022">
+<Aoide title={title}>
+  <a href="index.html">
+    <div class="logo text-center">
+      <img src="assets/img/tinyco-red-round-big.png" alt="" />
+    </div>
+  </a>
+
   <div class="content">
     <nav class="menu">
-      <a href="#" class="menu__item">sessions</a>
+      <!-- <a href="#" class="menu__item">sessions</a> -->
       <a href="/speakers" class="menu__item">speakers</a>
-      <a href="#" class="menu__item"
+      <!-- <a href="#" class="menu__item"
         >community<div class="empty-space">-</div>&amp;<div class="empty-space">
           -
         </div>sponsors</a
-      >
-      <a href="#" class="menu__item"
-        >schedule<div class="empty-space">-</div>&amp;<div class="empty-space">
-          -
-        </div>access</a
-      >
-
-      <a href="#" class="menu__item"
-        >stay<div class="empty-space">-</div>informed</a
-      >
+      > -->
+      <a href="/schedule" class="menu__item">schedule</a>
+      <!-- <a href="#" class="menu__item"
+                >stay<div class="empty-space">-</div>informed</a
+              > -->
     </nav>
     <div class="event-time">
       <div class="section">

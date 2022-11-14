@@ -1,0 +1,47 @@
+---
+import Aoide from "../layouts/Aoide.astro";
+import PageTitleSection from "../components/partials/PageTitleSection.astro";
+const PageDetails = {
+  pageTitle: "schedule",
+  pageSubtitle: "home | schedule",
+};
+import type { Session } from "../interfaces";
+const query = await fetch(
+  "https://sessionize.com/api/v2/n92go629/view/Sessions"
+);
+const data = await query.json();
+const { sessions } = data[0];
+
+import SessionRow from "../components/partials/SessionRow.astro";
+---
+
+<Aoide title="Speakers | Angular Tiny Conference 2022">
+  <div class="content__inner content--reveal">
+    <div class="section full-height over-y-scroll" id="boxscroll-2">
+      <div class="section" id="boxscroll-in-2">
+        <!-- Page start -->
+        <!-- Title & Nav Section -->
+        <PageTitleSection {...PageDetails} />
+        <div class="section padding-top-bottom">
+          <div class="container">
+            <div class="row">
+              <!-- 1st day start -->
+              <div class="col-md-12">
+                <h4>Friday December 2nd 2022</h4>
+                <div class="title-page-line mt-4 mb-5"></div>
+              </div>
+
+              {
+                sessions.map((session: Session) => (
+                  <SessionRow client:load {...session} />
+                ))
+              }
+              <!-- 1st day end -->
+            </div>
+          </div>
+        </div>
+        <!-- Page end -->
+      </div>
+    </div>
+  </div>
+</Aoide>

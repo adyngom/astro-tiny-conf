@@ -1,17 +1,20 @@
 ---
-export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+import { SessionSpeaker } from "../../interfaces";
 
-const { imageUrl, speakerName, speakerTitle, ...props } = Astro.props;
+const { profilePicture, fullName, tagLine, ...props } = Astro.props;
 ---
 
-<div class="col-md-3 justify-content-center">
+<div class="col-md-4 justify-content-center mb-4">
   <div class="speaker-image">
-    <img src={imageUrl} alt="" />
+    <img class="mx-auto" src={profilePicture} alt={fullName} />
   </div>
-  <div class="container mt-4">
-    <h5>{speakerName}</h5>
-    <p>
-      <em>{speakerTitle}</em>
+  <div class="container mt-4 text-center">
+    <h5>{fullName}</h5>
+    <p
+      class="text-truncate small"
+      style="max-height: 180px; overflow-y:hidden; text-overflow: ellipsis;"
+    >
+      <em>{tagLine}</em>
     </p>
   </div>
 </div>
