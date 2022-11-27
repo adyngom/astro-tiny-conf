@@ -93,13 +93,13 @@
 
     //Animated Icons
 
-    var options = {
-      duration: 150,
-      type: "oneByOne",
-      animTimingFunction: Vivus.EASE,
-    };
+    // var options = {
+    //   duration: 150,
+    //   type: "oneByOne",
+    //   animTimingFunction: Vivus.EASE,
+    // };
 
-    var vivus = new Vivus("svg-ticket", options, onComplete);
+    //var vivus = new Vivus("svg-ticket", options, onComplete);
 
     function onComplete() {}
   });
