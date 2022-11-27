@@ -6,11 +6,13 @@ const PageDetails = {
   pageSubtitle: "home | schedule",
 };
 import type { Session } from "../interfaces";
+// "https://sessionize.com/api/v2/n92go629/view/Sessions"
 const query = await fetch(
-  "https://sessionize.com/api/v2/n92go629/view/Sessions"
+  "https://sessionize.com/api/v2/n92go629/view/GridSmart"
 );
 const data = await query.json();
-const { sessions } = data[0];
+
+const { sessions } = data[0].rooms[0];
 
 import SessionRow from "../components/partials/SessionRow.astro";
 ---

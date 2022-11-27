@@ -1,12 +1,20 @@
 ---
 import type { Session, Speaker } from "../../interfaces";
 
-const { title, speakers, description, date, time } = Astro.props;
+const { title, speakers, description, startsAt, endsAt } = Astro.props;
+
+const convertToTime = (date: Date) => {
+  return new Date(date).toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+};
 ---
 
 <div class="col-md-3">
   <div class="schedule-time mb-4">
-    <p>tbd - tbd</p>
+    <p>{convertToTime(startsAt)} - {convertToTime(endsAt)}</p>
   </div>
 </div>
 <div class="col-md-9 mt-4 mt-md-0">
