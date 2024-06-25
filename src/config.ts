@@ -1,5 +1,5 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Angular Tiny Conf 2023';
+export const SITE_TITLE = 'Angular Tiny Conf 2024 | Shemu [ The Harvest ]';
 export const SITE_DESCRIPTION = "Angular is the beloved framework to thousands of developers around the world and has lately been moving at a very fast pace. The Angular Tiny Conference is a semesterly one day online event aiming to share all of the amazing ways individuals and teams are using not only the latest and greatest features, but also to celebrate the hard won victories as a testimony to the longevity and health of the platform. Even though we will strive to have seasoned speakers in our lineup, we have made it a commitment to be a launching pad for first time speakers also. We have a single track with sessions of 5 or 20mn running all day with a few breaks in between. To accommodate all of our speakers time zones, we offer the possibility of pre-recording some of the sessions. Just indicate that you will want to have your session pre-recorded and we will work you to find the best time to do so. We are looking forward to your submission and can't wait to hear you share your passion for Angular with the rest of us.";
